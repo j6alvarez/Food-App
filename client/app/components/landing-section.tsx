@@ -14,7 +14,7 @@ const LandingSection = () => {
               our restaurant
             </span>
           </h2>
-          <p className="text-2xl text-primary-600">
+          <p className="text-2xl">
             Please select a category to see our menu
           </p>
       </div>

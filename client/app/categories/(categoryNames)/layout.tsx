@@ -1,4 +1,5 @@
 import {FC, ReactNode} from "react";
+import CategoriesMenu from "@/app/components/categories-menu";
 
 interface LayoutProps {
   children: ReactNode;
@@ -6,7 +7,8 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div>
+    <div className="h-full w-full flex justify-between">
+      <CategoriesMenu />
       {children}
     </div>
   );

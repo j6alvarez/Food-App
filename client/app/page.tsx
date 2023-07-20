@@ -1,7 +1,7 @@
 import CategoriesMenu from "./components/categories-menu";
 import LandingSection from "./components/landing-section";
 
-const Home = ()=>{
+const Home = () => {
   return (
     <>
       <div className="flex justify-between">
@@ -10,6 +10,6 @@ const Home = ()=>{
       </div>
     </>
   );
-}
+};
 
 export default Home;
