@@ -4,14 +4,6 @@ import MealCard from "./meal-card";
 // interfaces
 import Meal from "../common/types/meal-interface";
 
-interface MealsGridProps {
-  meals: Meal[];
-  mealsLoading: boolean;
-  notAvailableMeals: boolean;
-  onCardClick: (meal: Meal) => void;
-  onShoppingCartClick: (meal: Meal) => void;
-}
-
 const mealsTesting = [
   {
     strMeal: "Chilli prawn linguine",
@@ -78,20 +70,17 @@ const mealsTesting = [
   },
 ];
 
-const MealsGrid = ({
-  meals,
-  mealsLoading,
-  notAvailableMeals,
-  onCardClick,
-  onShoppingCartClick,
-}: MealsGridProps) => {
+const MealsGrid = () => {
+
+  const onCardClick = () =>{}
+  const onShoppingCartClick = () =>{}
 
   // if(mealsLoading) return <div>Loading...</div>
 
   // if((!mealsLoading &&notAvailableMeals) || meals.length === 0) return <div>Not available meals</div>
 
   return (
-    <div className="mx-2 grid shrink grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-2 xl:gap-4 2xl:gap-8">
+    <div className="grow pr-4 mx-2 grid shrink grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-2 xl:gap-4 2xl:gap-8">
       {mealsTesting.length > 0 &&
         mealsTesting.map((meal) => (
           <MealCard

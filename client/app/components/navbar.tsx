@@ -8,7 +8,7 @@ const Navbar = () => {
         Menu
       </h1>
       <div className="w-16 mx-10 py-2">
-        <Image alt="chef-image" src={chef} />
+        <Image alt="chef" src={chef} />
       </div>
     </header>
   );

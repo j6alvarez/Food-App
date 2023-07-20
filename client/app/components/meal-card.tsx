@@ -14,7 +14,7 @@ const MealCard = ({meal, onCardClick, onShoppingCartClick}: MealCardProps) => {
   return (
     <div
       key={meal.idMeal}
-      className="flex flex-col grow-0 justify-between md:mt-2 items-center my-2 rounded-lg shadow-lg dark:shadow-gray-500 dark:bg-primary-dark cursor-pointer w-38 lg:w-64"
+      className="flex flex-col grow-0 justify-between md:mt-2 items-center my-2 rounded-lg shadow-lg shadow-gray-500 bg-primary-dark cursor-pointer w-38 lg:w-64"
     >
       <div
         className="w-38 lg:w-62 md:mt-4 justify-self-center"
@@ -30,10 +30,10 @@ const MealCard = ({meal, onCardClick, onShoppingCartClick}: MealCardProps) => {
       </div>
 
       <div className="p-4 flex flex-col grow justify-between text-start w-full">
-        <p className="text-base md:text-lg mb-2 font-bold leading-relaxed text-gray-800 dark:text-gray-300">
+        <p className="text-base md:text-lg mb-2 font-bold leading-relaxed text-gray-800 text-gray-300">
           {meal.strMeal}
         </p>
-        <small className="text-sm leading-5 text-gray-500 dark:text-gray-400">
+        <small className="text-sm leading-5 text-gray-500 text-gray-400">
           {meal.price} USD
         </small>
       </div>
