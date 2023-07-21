@@ -21,7 +21,7 @@ const CategoriesMenu = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3001`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`)
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
@@ -51,6 +51,7 @@ const CategoriesMenu = () => {
                 {categories.length > 0 &&
                   categories.map((category) => (
                     <li
+                      key={category.idCategory}
                       className={`rounded-sm hover:-translate-y-1 ${
                         categorySelected === category.strCategory &&
                         "bg-secondary-dark"
