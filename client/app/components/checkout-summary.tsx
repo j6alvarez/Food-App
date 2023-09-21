@@ -3,8 +3,28 @@
 import { useRouter } from "next/navigation";
 import { useCart } from "../context/cart-context-provider";
 
+import StripeCheckout from "react-stripe-checkout";
+
 const CheckoutSummary = () => {
   const { totalAmount, totalCartItems } = useCart();
+
+
+  const onToken = (token:any) => {
+    const config = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token: token.id, amount_cents: totalAmount*100, email: token.email }),
+    };
+
+    fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/orders`,
+      config
+    )
+      .then((res) => res.json())
+      .then(responseJson => console.log(responseJson));
+  };
 
   const router= useRouter();
 
@@ -16,7 +36,10 @@ const CheckoutSummary = () => {
         <div className="text-2xl lg:text-4xl">Total {totalAmount} USD</div>
         <div className="grid md:flex">
           <button className="bg-primary-dark grow hover:-translate-y-1 text-white font-bold py-2 px-4 rounded m-4">
-            Buy
+            <StripeCheckout
+              token={onToken}
+              stripeKey={`${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`}
+            />
           </button>
           <button
             className="bg-primary-dark grow hover:-translate-y-1 text-white font-bold py-2 px-4 rounded m-4"

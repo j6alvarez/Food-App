@@ -31,6 +31,8 @@ module Api
       end
     end
 
+    Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

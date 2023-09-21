@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'categories#index'
   get "/categories", to: "categories#index"
   get "/categories/:category", to: "categories#obtain_meals_by_category"
+  post :orders, to: 'orders#create'
 end
