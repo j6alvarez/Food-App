@@ -47,7 +47,7 @@ const CategoriesMenu = () => {
           </div>
           <div className="flex-1">
             {!isLoading ? (
-              <ul className="pt-2 pb-4 space-y-1 text-sm">
+              <ul className="pt-2 pb-4 space-y-1 text-md">
                 {categories.length > 0 &&
                   categories.map((category) => (
                     <li

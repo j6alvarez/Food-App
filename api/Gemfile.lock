@@ -69,6 +69,10 @@ GEM
     crass (1.0.6)
     date (3.3.3)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     ffi (1.15.5)
     globalid (1.1.0)
@@ -196,6 +200,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-x86_64-linux)
+    stripe (9.2.0)
     thor (1.2.2)
     timeout (0.4.0)
     tzinfo (2.0.6)
@@ -212,6 +217,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
+  dotenv-rails
   httparty (~> 0.21)
   listen (~> 3.3)
   puma (~> 5.0)
@@ -221,6 +227,7 @@ DEPENDENCIES
   rubocop
   spring
   sqlite3 (~> 1.4)
+  stripe
   tzinfo-data
 
 RUBY VERSION
